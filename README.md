@@ -34,3 +34,15 @@ test-auth-soap-server.core=> (def reg-proxy (.getRegistrationPort reg-service))
 test-auth-soap-server.core=> (.loginUser reg-proxy "alice" "asecret")
 "OK"
 ```
+
+Or you could use the Clojure wrapper provided in
+
+``test-auth-soap-server.client``:
+
+```clojure
+test-auth-soap-server.core=> (require '[test-auth-soap-server.client :as client])
+nil
+test-auth-soap-server.core=> (-> (client/new)
+                                 (client/login "bob" "abc123"))
+"OK"
+```
