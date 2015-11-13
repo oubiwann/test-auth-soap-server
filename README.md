@@ -36,7 +36,6 @@ test-auth-soap-server.core=> (.loginUser reg-proxy "alice" "asecret")
 ```
 
 Or you could use the Clojure wrapper provided in
-
 ``test-auth-soap-server.client``:
 
 ```clojure
