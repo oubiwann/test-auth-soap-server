@@ -27,11 +27,11 @@ Sample usage in REPL (while ``lein run`` is still serving on localhost:8888):
 $ lein repl
 ```
 ```clojure
-test-auth-soap-server.core=> (def reg-service (gov.example.registration.RegistrationService.))
-#'test-auth-soap-server.core/calcWeb-service
-test-auth-soap-server.core=> (def reg-proxy (.getRegistrationPort reg-service))
-#'test-auth-soap-server.core/calcWeb-proxy
-test-auth-soap-server.core=> (.loginUser reg-proxy "alice" "asecret")
+t.c=> (def reg-service (gov.example.registration.RegistrationService.))
+#'test-auth-soap-server.core/reg-service
+t.c=> (def reg-proxy (.getRegistrationPort reg-service))
+#'test-auth-soap-server.core/reg-proxy
+t.c=> (.loginUser reg-proxy "alice" "asecret")
 "OK"
 ```
 
@@ -39,9 +39,9 @@ Or you could use the Clojure wrapper provided in
 ``test-auth-soap-server.client``:
 
 ```clojure
-test-auth-soap-server.core=> (require '[test-auth-soap-server.client :as client])
+t.c=> (require '[test-auth-soap-server.client :as client])
 nil
-test-auth-soap-server.core=> (-> (client/new)
+t.c=> (-> (client/new)
                                  (client/login "bob" "abc123"))
 "OK"
 ```
