@@ -42,6 +42,6 @@ Or you could use the Clojure wrapper provided in
 t.c=> (require '[test-auth-soap-server.client :as client])
 nil
 t.c=> (-> (client/new)
-                                 (client/login "bob" "abc123"))
+          (client/login "bob" "abc123"))
 "OK"
 ```
